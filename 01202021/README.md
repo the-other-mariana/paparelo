@@ -60,7 +60,9 @@ Anyway, to do the parallelism of data: the idea is to divide the data in n parti
 
         ![img](res/10.png)
 
-        - *Note: to clacluate total execution time like above, do not sum all processor times since they are executed in parallel, instead take the maximum.*
+        - *Note: to calculate total execution time like above, do not sum all processor times since they are executed in parallel, instead take the maximum. In the original matrix A example:*
+
+        ![img](res/16.png)
 
 2. **The Parallelism of Tasks**, also known as *Functional Decomposition*, and in this case the focus is on partioning the Task T in a set of n smaller Tasks T_1, ..., T_n. This is basically what we know as "divide and conquer". This partitioning type consists in dividing the Task into smaller tasks that can be executed in parallel. The Task is the whole program, which is an algorithm, or a series of instructions, and after the partitioning, instead of having one algorithm, we have a set of algorithm or tasks that are smaller and to whom the **whole data set** is sent to: each T_n works over all the data set.
 
@@ -78,9 +80,9 @@ The Task T is:
 
 - We can see above that the Task T can be easily partitioned in two smaller tasks: 
 
-    1. (2 * c_0)
+    1. (2 * c_0), where c_0 is one number.
 
-    2. (c_1 + 1)
+    2. (c_1 + 1), where c_1 is one number.
 
     ![img](res/13.png)
 
@@ -88,4 +90,16 @@ The Task T is:
 
 ![img](res/14.png)
 
-- How to calculate the total execution time? In this program, we have now 2 Tasks, instead of 4, and so we will execute each Task T_n in each processor, and we will use 2 processors as a total.
+- How to calculate the total execution time? In this program, we have now 2 Tasks, instead of 4, and so we will **execute each Task T_n in each processor**, and we will use 2 processors as a total. If we consider what we said above, the previous Task T consisted in a multiplication and a sum on one line, and this took 1 second, therefore **tasks T_1 and T_2 will take 0.5 seconds** since they only do one operation, half of Task T. 
+
+    - Thus, each processor will do one operation on three numbers (even though we sent it the whole matrix), and since these three operations are *done in a single processor*, they are don **sequentially**. In this way, each processor will do 3 operations that take 0.5s each = 1.5s per processor. 
+
+    - The total execution time is then:
+
+    > t_total = max({t_1, t_2}) <br />
+    > t_total = max({1.5, 1.5}) <br />
+    > t_total = 1.5s
+
+    ![img](res/15.png)
+
+**Out of the two approaches with matrix A example, the faster one is using Data Partition. Other cases may be opposite and need Task Partition**. Sometimes there are problems that can only be divided using one type, or both; when it can be analyzed using both techniques, choose the faster one to implement. Partitioning technique choosing is the first analysis to be done when a parallel problem is being detected. 
