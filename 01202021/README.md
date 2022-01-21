@@ -1,8 +1,8 @@
-# Fundamentals Pt. 1
+# Fundamentals I
 
 ![img](res/1.png)
 
-When designing a program that will use parallelism, there are a few key concepts that allow this design. The first key idea used for parallelism construction is **partitioning**. Partitioning is basically dividing the problem in small **Tasks (T)**, but there are two types of partitioning:
+When designing a program that will use parallelism, there are a few key concepts that allow this design. The *first key idea* used for parallelism construction is **partitioning**. Partitioning is basically dividing the problem in small **Tasks (T)**, but there are two types of partitioning:
 
 1. **The Parallelism of Data**, also known as *Domain Decomposition*, which allows us to divide or patition the problem **based on data**. By looking at the image below, there is a Task (T), that represents a whole program, and also a data set (D) over which the Task will work on. What this partitioning type consists in, is dividing the data in pieces with which we can act upon in a **concurrent** way. This can be seen now with the Task (T) referring to each D/n_D, or data parts, where n is the number of partitions. Thus, the purpose is that the Task T is repeated for **each data piece D/n_D until all pieces of data are used**. 
 
@@ -104,7 +104,7 @@ The Task T is:
 
 **Out of the two approaches with matrix A example, the faster one is using Data Partition. Other cases may be opposite and need Task Partition**. Sometimes there are problems that can only be divided using one type, or both; when it can be analyzed using both techniques, choose the faster one to implement. Partitioning technique choosing is the first analysis to be done when a parallel problem is being detected. 
 
-The second key idea or step is: **ask ourselves if we need Coordination** in out program: coordination among all Tasks that are being executed in parallel. Even though we can use Task Partition to divide into smaller tasks, or Data Partition to divide into data pieces, so that we have *Task copies*, sometimes we need a certain coordination among all Task copies. Why? because there can be **Data Dependency**. When the problem is totally parallelizable, like the example of A matrix, we did not need coordination among tasks. There are 3 reasons for which we can use Coordination among Tasks:
+The *second key idea* or step is: **ask ourselves if we need Coordination** in our program: coordination among all Tasks that are being executed in parallel. Even though we can use Task Partition to divide into smaller tasks, or Data Partition to divide into data pieces, so that we have *Task copies*, sometimes we need a certain coordination among all Task copies. Why? because there can be **Data Dependency**. When the problem is totally parallelizable, like the example of A matrix, we did not need coordination among tasks. There are 3 reasons for which we can use Coordination among Tasks:
 
 1. **Communication**, which means Data Transference between Tasks. Sometimes a Task needs bits of information from other Task, and that's where Communication happens. This can be due to the Task needing the other's results to go on, etc. This means that the Tasks and Data, the program itself, could **not be totally parallelizable**, and so when we use Communication we introduce Coordination, and thus obliges Tasks to be serialized during a period of time. 
 
