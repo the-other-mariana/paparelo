@@ -103,3 +103,19 @@ The Task T is:
     ![img](res/15.png)
 
 **Out of the two approaches with matrix A example, the faster one is using Data Partition. Other cases may be opposite and need Task Partition**. Sometimes there are problems that can only be divided using one type, or both; when it can be analyzed using both techniques, choose the faster one to implement. Partitioning technique choosing is the first analysis to be done when a parallel problem is being detected. 
+
+The second key idea or step is: **ask ourselves if we need Coordination** in out program: coordination among all Tasks that are being executed in parallel. Even though we can use Task Partition to divide into smaller tasks, or Data Partition to divide into data pieces, so that we have *Task copies*, sometimes we need a certain coordination among all Task copies. Why? because there can be **Data Dependency**. When the problem is totally parallelizable, like the example of A matrix, we did not need coordination among tasks. There are 3 reasons for which we can use Coordination among Tasks:
+
+1. **Communication**, which means Data Transference between Tasks. Sometimes a Task needs bits of information from other Task, and that's where Communication happens. This can be due to the Task needing the other's results to go on, etc. This means that the Tasks and Data, the program itself, could **not be totally parallelizable**, and so when we use Communication we introduce Coordination, and thus obliges Tasks to be serialized during a period of time. 
+
+    - The sequential or serial part of my program, no matter how many processors were executing in parallel, that part needs to be executed by **one processor**, that's why it is sequential.
+
+    - **Communication** also always involves **Synchronization**, or pauses when processors wait for others so that the data they need is ready or the communication channel is available. Thus, communication slows down time performance importantly.
+
+2. **Synchronization**, whose origin or cause is the **need of cooperation**, which means when a processor stops to wait for other computation to finish and cooperate. We need this cooperation because there is **Task Dependency**, and this in turn serializes our program as well, because tasks are done sequentially during synchronization: **not totally parallelizable**. 
+
+3. **Load Balance** (Balance de Carga), which means that **all processors involved have the same** or the most similar amount of **work** between each other, because if processors have different amounts of work then there are processors with less work, and this is a resource (time) waste. In this way, the better load balance, the less execution time.  
+
+    - An example of this is the *scheduler* (planner) of an Operating System, which balances the load of the CPU (micro)processors. This allows the Operating System to *virtualize* processors, that is, make the illusion of more processors, one for each application running. This illusion is done by **virtualizing** and it uses the technique of **shared time**, which involves paying attention to each app running for a small period of time, until all apps are attended sequentially and so on.
+
+If the program is designed for, say, 8 processors, and we only have 4 processors, the program will be balanced by the scheduler and we will obtain the performance of only the processors we have.
