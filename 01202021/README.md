@@ -64,7 +64,7 @@ Anyway, to do the parallelism of data: the idea is to divide the data in n parti
 
         ![img](res/16.png)
 
-2. **The Parallelism of Tasks**, also known as *Functional Decomposition*, and in this case the focus is on partioning the Task T in a set of n smaller Tasks T_1, ..., T_n. This is basically what we know as "divide and conquer". This partitioning type consists in dividing the Task into smaller tasks that can be executed in parallel. The Task is the whole program, which is an algorithm, or a series of instructions, and after the partitioning, instead of having one algorithm, we have a set of algorithm or tasks that are smaller and to whom the **whole data set** is sent to: each T_n works over all the data set.
+2. **The Parallelism of Tasks**, also known as *Functional Decomposition*, and in this case the focus is on partioning the Task T in a set of n smaller Tasks T_1, ..., T_n. This is basically what we know as "divide and conquer". This partitioning type consists in dividing the Task into smaller tasks that can be executed in parallel. The Task is the whole program, which is an algorithm, or a series of instructions, and after the partitioning, instead of having one algorithm, we have a set of algorithms or tasks that are smaller and to whom the **whole data set** is sent to: each T_n works over all the data set.
 
 ![img](res/11.png)
 
