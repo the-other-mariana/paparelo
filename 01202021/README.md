@@ -16,7 +16,7 @@ Our data is a series of numbers stored in a matrix A:
 
 where c_0 is column 0 and c_1 is column 1. Also, we have a Task T that we need to execute upon those numbers; T is to transform matrix A as:
 
-> A = [(2 * c_0) (c_1 + 1)]
+> T = [(2 * c_0) (c_1 + 1)]
 
 which means to do the following operations:
 
@@ -92,7 +92,7 @@ The Task T is:
 
 - How to calculate the total execution time? In this program, we have now 2 Tasks, instead of 4, and so we will **execute each Task T_n in each processor**, and we will use 2 processors as a total. If we consider what we said above, the previous Task T consisted in a multiplication and a sum on one line, and this took 1 second, therefore **tasks T_1 and T_2 will take 0.5 seconds** since they only do one operation, half of Task T. 
 
-    - Thus, each processor will do one operation on three numbers (even though we sent it the whole matrix), and since these three operations are *done in a single processor*, they are don **sequentially**. In this way, each processor will do 3 operations that take 0.5s each = 1.5s per processor. 
+    - Thus, each processor will do one operation on three numbers (even though we sent it the whole matrix), and since these three operations are *done in a single processor*, they are done **sequentially**. In this way, each processor will do 3 operations that take 0.5s each = 1.5s per processor. 
 
     - The total execution time is then:
 
