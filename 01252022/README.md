@@ -109,3 +109,43 @@ With its two time diagrams:
 - The **price** to pay due to **Synchronization** always is **to increment execution time**.
 
 ## Load Balance
+
+Load Balance refers to when all processors working in parallel have the same amount of work during the largest amount of time possible. This equilibrium must be **active** when the tasks are working, to that when waiting time finishes or tasks have changed, the distribution of work is also **updated**. The purpose of Load Balance is to **reduce time execution as much as possible**. Let's see an example:
+
+- Data: the vectors:
+
+> x_1 = (2, 1, 3, 4) <br />
+> x_2 = (5, 6, 7, 1)
+
+- Task we want to execute upon such data is: the sum of the two vectors.
+
+> x_1 + x_2 = (2+5, 1+6, 3+7, 4+1) = (7, 7, 10, 5)
+
+In this Task, we only have **one** operation, and so its division is not possible.
+
+![img](res/12.png)
+
+Each sum operation (T) in **independent** from one another. Thus, if we have a lot of processors, we can assign one to each of the 4 sums/tasks/operations we have to execute. We assign one Task T copy to each pair of numbers that need to be added. Therefore, each of the tasks will be executed in **parallel** and output:
+
+![img](res/13.png)
+
+If we got 4 task copies, then we got 4 processors executing in parallel:
+
+![img](res/14.png)
+
+- Imagine now that we only got **2 processors**. We still have to execute 4 tasks, with the same data each, but only in two processors. That means we need to **distribute** the tasks among the processors. That is how p_1 will get the first 2 sums and p_2 will get the other 2 sums.
+
+![img](res/15.png)
+
+Each two of the processors will execute their two tasks in **sequence** or in series.
+
+- The more we reduce the amount of processors, the more time the tasks will take to be executed, even though they can be **parallelized**. 
+
+- All operations done in a **single processor** are done **sequentially or in series**.
+
+Thus, **Load Balance** here is done by determining that each processor will do the same amount of work, that is, the four tasks we have are divided by the number of processors we have. When we distribute symmetrically like this, **we are reducing the execution time as much as possible**. Load Balance is crutial since we seldom have the same amount of tasks and processors.If we dont do it and split otherwise:
+
+![img](res/16.png)
+
+During "wasted time" the processor was inactive, and also took longer to complete the Task T than the previous distribution.
+
