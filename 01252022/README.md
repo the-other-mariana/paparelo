@@ -149,3 +149,42 @@ Thus, **Load Balance** here is done by determining that each processor will do t
 
 During "wasted time" the processor was inactive, and also took longer to complete the Task T than the previous distribution.
 
+> So these are the four things to analyze when working in a parallel program: the type of Partition we need; if there is Communication, which will involve Synchronization; if we have another type of Synchronization; and finally, how to perform a Load Balance.
+
+# The Foster Method
+
+When facing the problem of how to perform a Load Balance so that the execution in parallel ends up being as optimal as possible, people came up with **The Foster Method**.
+
+![img](res/1.png)
+
+**The Foster Method** is a technique based on 4 steps, that allow us to build parallel programs in the most efficient way, and which has been adopted by almost every book. Basically, what Foster did was to **consider the 4 concepts** we just checked. He conglomerated everything and came up with 4 steps:
+
+1. **Partitioning**, when we do the partitioning, we divide the original problem in smaller tasks, or divide the data in subsets that will be filling a subset of tasks. Break into the **smaller Task size as possible** to use resources the wisest.
+
+    - Use the two types of partitioning for this step.
+
+![img](res/17.png)
+
+2. **Communication**, which is checking if there is communication between these small subtasks. If they do, we connect a pair of related tasks with **a line that represents the communication channel of that pair**.
+
+    - The more lines/channels of **communication** my program/problem has,
+    
+        - the less **parallelization** we have,
+
+        - the more insertion of **serialization** there is among tasks, and
+
+        - the **slowest** the parallel program will be.
+
+3. **Union**, which refers to the union of tasks, which implicitly involves **synchronization**. Since we broke down the problem as small as possible in step 1, and communicated these smallest bits in step 2, so that in step 3 we **link tasks** based on two things:
+
+    1. If there is dependency; if one task is executed after another, **we link those two as one bigger task**, because they oblige **serialization**. This takes us to 2: (If there was a line between a small and big task, it remains.)
+    
+    2. We link tasks since maybe we do not have as much processors as there are small tasks. And also, if we group based on dependency and we send **a serialized group to a single processor**, we are avoiding serialization **and communication** (slower) if, for example, we send a serialized group to two processors and they need to communicate.
+
+- The less communication, the less serialization, the less execution time.
+
+- Communication channels involve memory, and 1 memory access is 100 times slower than a processor operation. That is why communication increases execution time. In the previous examples, we are not even counting this time to calculate total execution times.
+
+4. **Mapping** or Load Balance. Once we got all of our *bigger* tasks linked, we decide wich one(s) to send to a processor, in such way so that the distribution or **amount of work** in processors is **as symmetrical as possible during as much time as possible**, and **reducing the communication between processors**.
+
+    
