@@ -121,3 +121,27 @@ If we had 3 processors, all copies of Task 1 can be in parallel and Task 2 being
 # Types of Processing
 
 ![img](res/17.png)
+
+There exists a cliassification for the type of processing that we can execute. This classification based on the type of processing is called **Flynn's Taxonomy**. This taxonomy has two dimensions: 
+
+1. Stream of Instructions: has to do with Tasks. Tasks are a set of instructions. Thus, in the Task dimension, we talk about the **Stream of Instructions**, which represents the horizontal axis of our matrix below.
+
+2. Stream of Data: has to do with data, and is the y axis of the matrix below.
+
+Along each of these two dimensions we can see **two types of Stream** for every type (Instructions/Data). The Stream types is based on wheteher or not we can **partition data**.
+
+1. Single Data (SD): the execution is **1 data** at a time. When we **cannot partition the data**, we have a **SD Stream**.
+
+2. Multiple Data (MD): execute on multiple data *at the same time*. When we **can partition the data**, we have a **MD Stream**.
+
+The same applies to Instruction Streams:
+
+1. Single Instruction (SI): the execution is **1 instruction** at a time. When we **cannot partition the instructions**, we have a **SI Stream**.
+
+2. Multiple Instructions (MI): execute multiple instructions *at the same time*. When we **can partition the instructions**, we have a **MI Stream**.
+
+All the combinations of these 4 types make up the matrix: **SI/SD, MI/SD, SI/MD, MI/MD**.
+
+1. **SISD**: In this type we only have **one processor** executing everything. It receives a series of instructions to execute and a set of data over which to execute the instructions. Since it is **one processor**, it executes instruction by instruction and it reads data by data according to the current instruction, **sequentially**. The last processor to have one nucleus (one processor) was the Pentium.
+
+![img](res/18.png)
