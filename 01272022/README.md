@@ -58,3 +58,66 @@
     ![img](res/8.png)
 
 ## Example 2
+
+- Data: the vectors:
+
+> x_1 = (2, 3, -2) <br />
+> x_2 = (1, 2, 0)
+
+- Task: the dot product:
+
+> x_1 * x_2 = 2(1) + 3(2) + (-2)(0)
+
+1. **Partition**: this example cannot be split by data and use identical tasks, and so the best way is to partition by tasks: one of multiplication a*b and the other of the sum a + b + c (two sums). The multip have to be done **first**, so there's **dependency**. We have 3 tasks of multip and 1 of sum = **4 Tasks**.
+
+![img](res/9.png)
+
+2. **Communication**: check whether or not there needs to be communication among the total 4 Tasks. There **is** the need of communication, since the sum Task **needs the result of Task 1, 2, and 3** of the multiplication Tasks. There is communication since **Task requires other Tasks' results.** Thus, we draw the communication lines / arrows. 
+
+![img](res/10.png)
+
+3. **Union** of Tasks: given that we have **dependendency** / **communication**, we can link Tasks so that **one executes after another**. Take on account:
+
+    - The 3 multiplication Tasks can be executed in **parallel**, since there is no **dependency** / **communication** among them. So, they can be **executed in different processors**.
+
+    - **Each** of the 3 multiplication Tasks is **serialized** with the sum Task.
+
+    - Every Task you link in a bigger sub task, will be executed in **sequence**, or in the same **processor** (as they become a single Task).
+
+    - Since there is **dependency** with Task 4 over Tasks 1,2,3, 
+
+    ![img](res/11.png)
+
+    - This union is as such above, because we need dependency / serialization / **union** between Task 1 and Task 2, but we cannot link all copies of Task 1, since that would mean to serialize them: by leaving them out, we are enabling them to be **parallel**. **When we link in a sub task, we serialize**. We could link with any copy of Task 1.
+
+    - As we made a bigger sub task, we need to update **communication** lines, because the communication needs to be expressed **in terms of the new tasks**. Also, update the inner tasks' communication:
+
+    ![img](res/12.png)
+
+4. **Mapping**: load balance in the amount of processors. Let's say we have 2 processors again. Overall, we have 3 Tasks: 
+
+    - we could do: 1 processor with 1 Task and 1 processor with the other 2 Tasks. But look:
+
+    ![img](res/13.png) 
+
+    - We have one **double task** together with another in a single processor. We can better distribute if we look at it as 4 Tasks:
+
+    ![img](res/14.png)
+
+    - Update communication. Now we have inter-processor communication. However, p_1 **has to wait after its linked copy of T_1 until the other copies finish and it can proceed with T_2**.
+
+    - We are winning time performance, in the execution of these two Tasks in parallel: (everything else is sequential)
+
+    ![img](res/15.png)
+
+The time diagram would look as follows:
+
+![img](res/16.png)
+
+If we had 3 processors, all copies of Task 1 can be in parallel and Task 2 being the only one in series.
+
+- **The need of Mapping** obliges us to do the **Load Balance** (or equilibrium in work) among the processors. And this need of **Load Balance** is the one that makes us need a **Task Planner**. The Task Planner is anothe program that assigns Tasks to processors, and thus consumes resources. The Planner must **not be so complex** that it overloads the processors as well.
+
+# Types of Processing
+
+![img](res/17.png)
