@@ -23,7 +23,7 @@
 
 1. **Partitioning**: partition the problem into smaller problems; we can use task or data partitioning.
 
-    1. If we use the **parallelism of tasks** to partition the Task T into its two smallest components, since it has two operations: 
+    1. If we use the **parallelism of tasks** to partition the Task T into its two smallest components, since it has two operations.
 
     2. If we use the **parallelism of data**, the Task remains the same but we have a **Task T copy** for each of the data parts we divide data into. Thus, we have **three tasks that are identical** over each data part (line of data).
 
@@ -37,7 +37,7 @@
 
     ![img](res/5.png)
 
-3. **Union**: link tasks in a bigger sqauare if necessary. That is, if the tasks are very small and there is **dependency** between them, we can **serialize them** and use that to say that they should be executed by **the same processor**. In this case it is not necessary, but we can do it to see how it works with bigger tasks:
+3. **Union**: link tasks in a bigger square if necessary. That is, if the tasks are very small and there is **dependency** between them, we can **serialize them** and use that to say that they should be executed by **the same processor**. In this case it is not necessary, but we can do it to see how it works with bigger tasks:
 
     1. We can make a bigger sub task by joining both tasks into one.
 
