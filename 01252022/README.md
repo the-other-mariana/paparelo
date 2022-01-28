@@ -37,7 +37,7 @@ Once The Task is executed in parallel, its result is the do product, which is 8.
 
 ![img](res/5.png)
 
-- The fact that the processes (tasks) have to communicate obliges the **tasks to be serialized** (sequential). What does it mean when we way **tasks are serialized**? That one task has to be executed **after another**.
+- The fact that the processes (tasks) have to communicate obliges the **tasks to be serialized** (sequential). What does it mean when we say **tasks are serialized**? That one task has to be executed **after another**.
 
 - The effect on the program that the sequential parts have is the **waiting time**. This also provokes a larger execution time.
 
