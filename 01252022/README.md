@@ -110,7 +110,7 @@ With its two time diagrams:
 
 ## Load Balance
 
-Load Balance refers to when all processors working in parallel have the same amount of work during the largest amount of time possible. This equilibrium must be **active** when the tasks are working, to that when waiting time finishes or tasks have changed, the distribution of work is also **updated**. The purpose of Load Balance is to **reduce time execution as much as possible**. Let's see an example:
+Load Balance refers to when all processors working in parallel have the same amount of work during the largest amount of time possible. This equilibrium must be **active** when the tasks are working, so that when waiting time finishes or tasks have changed, the distribution of work is also **updated**. The purpose of Load Balance is to **reduce time execution as much as possible**. Let's see an example:
 
 - Data: the vectors:
 
