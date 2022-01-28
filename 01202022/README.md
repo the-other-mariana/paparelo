@@ -86,7 +86,7 @@ The Task T is:
 
     ![img](res/13.png)
 
-- After determining T_1 adn T_2, we send the **whole matrix of information to each Task**, even though they may not be used all.
+- After determining T_1 and T_2, we send the **whole matrix of information to each Task**, even though they may not be used all.
 
 ![img](res/14.png)
 
