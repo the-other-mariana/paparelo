@@ -122,7 +122,7 @@ If we had 3 processors, all copies of Task 1 can be in parallel and Task 2 being
 
 ![img](res/17.png)
 
-There exists a cliassification for the type of processing that we can execute. This classification based on the type of processing is called **Flynn's Taxonomy**. This taxonomy has two dimensions: 
+There exists a classification for the type of processing that we can execute. This classification based on the type of processing is called **Flynn's Taxonomy**. This taxonomy has two dimensions: 
 
 1. Stream of Instructions: has to do with Tasks. Tasks are a set of instructions. Thus, in the Task dimension, we talk about the **Stream of Instructions**, which represents the horizontal axis of our matrix below.
 
