@@ -4,6 +4,8 @@ There are 4 configurations about how can we compute calculations in a PC.
 
 - The first dimension is the stream of instructions and the other is the stream of data. Each dimension can be partitioned or not, which gave us: many instructions/data or 1 instruction/data. This combinations gave us the four cells in the diagram.
 
+----
+
 1. **SISD (Single Instruction, Single Data)**:
 
 ![img](res/1.PNG)
@@ -19,6 +21,8 @@ There are 4 configurations about how can we compute calculations in a PC.
 If we want to change either the data or the instruction, it needs to be **at another instant in time**. The instructions come from the **source program**. Only one instruction and one data value stream at a time *t* inside processor P.
 
 ![img](res/5.png)
+
+----
 
 2. **MISD (Multi Instruction, Single Data)**:
 
@@ -41,6 +45,8 @@ The same data value (x = 3) wil enter **n times** (n processors), and since we g
 
 ![img](res/7.png)
 
+----
+
 3. **SIMD (Single Instruction, Multi Data)**:
 
 ![img](res/3.PNG)
@@ -61,6 +67,8 @@ On another **instant of time** *t*, the instruction can change (2x) or the data 
 - Synchronous: all processors begin execution of their instruction at the same time. After one instruction, the quickest processor needs to wait for all others to finish theirs in order to continue, **since they use the same clock**.
 
 ![img](res/6.png)
+
+----
 
 4. **MIMD (Multi Instruction, Multi Data)**:
 
