@@ -80,7 +80,7 @@ What is expected is:
 
 *Note: the incorrect output also depends on which task finishes processing first and thus replaces x value first. Could have output x = 2. Or maybe both finished at the same time and tried to change x simultaneously and thus wrote something weird (third option).*
 
-The problem here lies in that T_2 is not realizing that it must execute after and with the value of T_1 output. This is what we know as **Race Condition** (condición de carrera). This can happen not only between **processors/tasks**, but also between machines, bank accounts, etc. Since there **was not synchronization**, we didn't get the expect result of x = 5.
+The problem here lies in that T_2 is not realizing that it must execute after and with the value of T_1 output. This is what we know as **Race Condition** (condición de carrera). This can happen not only between **processors/tasks**, but also between machines, bank accounts, etc. Since there **was not synchronization**, we didn't get the expected result of x = 5.
 
 Then, what do we need to do in order to make these tasks work? the answer is **the first task that accesses the value of x, needs to signal a wait flag for the other task**, and thus the first one says that when it finishes its task, the other task can proceed and execute its own. Thus, the latter task **waits** for the first to finish and then executes. This is **synchronization**. Different scenarios can happen in this case:
 
