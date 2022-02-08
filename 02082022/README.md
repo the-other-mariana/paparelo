@@ -32,6 +32,8 @@ The suggestion is to grab the N current biggest Tasks (N processors), and assign
 
 # Memory Access: Classification
 
+![img](res/8.png)
+
 Memory Access: the access that the processors have to RAM Memory (Main Memory), since it is in the RAM where the program (Task) is and also the variables while the program executes. The OS copies the source program from Secondary Memory to RAM since it is faster to work on RAM.
 
 It has two types:
