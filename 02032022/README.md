@@ -1,4 +1,4 @@
-# Homework 0: Solution
+# Homework 0: Solution Part 1
 
 ![img](res/hw0-solution.png)
 
