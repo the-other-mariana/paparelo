@@ -38,7 +38,7 @@ Memory Access: the access that the processors have to RAM Memory (Main Memory), 
 
 It has two types:
 
-1. **Shared Memory Systems**: basically all PCs, the have the following structure:
+1. **Shared Memory Systems**: basically all PCs, and they have the following structure:
 
     - They have a series of Processors, p_1, p_2, ..., p_n. All processors use the same memory space (RAM). They share it *through* an **interconnection network**, one for all processors: this network is the main issue since it is one for all processors. That is why every processors' access to RAM needs to grab **the biggest amount of information it can** so that the processors **minimize the number to accesses**.
 
