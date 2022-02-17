@@ -1,6 +1,6 @@
 # Interconnection Network
 
-![img](res/0.png)
+![img](res/0.PNG)
 
 An **Interconnection Network** is basically a **graph** structure, which has a graphical visualization. The graph will be then a set of connections between two or more elements: **lines** connect **nodes**, and they represent the **line of communication**, and a **device**, respectively. Each of these devices (nodes) can be a RAM memory or a **processor in a system of either shared or distributed memory**.
 
