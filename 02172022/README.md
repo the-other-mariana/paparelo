@@ -1,5 +1,7 @@
 # Interconnection Networks Pt III
 
+![img](res/0.PNG)
+
 - **2D**:
 
 Consider *n* = number of nodes.
