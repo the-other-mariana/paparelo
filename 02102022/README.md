@@ -1,5 +1,7 @@
 # Interconnection Network
 
+![img](res/0.png)
+
 An **Interconnection Network** is basically a **graph** structure, which has a graphical visualization. The graph will be then a set of connections between two or more elements: **lines** connect **nodes**, and they represent the **line of communication**, and a **device**, respectively. Each of these devices (nodes) can be a RAM memory or a **processor in a system of either shared or distributed memory**.
 
 Why this graph? The more lines we have in the graph, the more parallelism is allowed to happen in the system. If a processor wants to communicate with another, and they are connected directly with an available line, **the communication is parallel**, which means that the number of lines is the number of parallel messages the processor can send/receive.
