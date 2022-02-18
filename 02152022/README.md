@@ -22,7 +22,7 @@ We also distinguish another concept,
 
 - In nature, nothing travels faster than light. Therefore, we cannot expect devices to communicate faster than that.
 
-**Transmition Time T_T**: the time it takes 
+**Transmission Time T_T**: the time that passes since the transmission of the first character / byte from A at time *t_i* until the reception of the last character / byte in B at time *t_f*.
 
 - In the diagram, t_i is the moment in time where the the first character starts to be transmitted, and when this first char is received in B was the t_f of **Latency**, but we now want the time until **the whole string arrives**, for which we use the Band Width calculation:
 
