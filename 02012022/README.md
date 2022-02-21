@@ -86,7 +86,7 @@ On another **instant of time** *t*, the instruction can change (2x) or the data 
 > p_3 = x / 2 <br />
 > p_4 = x - 3 <br />
 
-The first data value of the vector will enter p_1, the second p_2, etc. at instant *t* of time, that is, **simultanously** all processors execute their instructions. This is the processing model that today's processors use: they have multiple nuclei (processors) and so they can process many data in many processors **simultaneously**.
+The first data value of the vector will enter p_1, the second p_2, etc. at instant *t* of time, that is, **simultaneously** all processors execute their instructions. This is the processing model that today's processors use: they have multiple nuclei (processors) and so they can process many data in many processors **simultaneously**.
 
 The processors are synchronous as well: after one instruction, the quickest processor needs to wait for all others to finish theirs in order to continue, **since they use the same clock**.
 
