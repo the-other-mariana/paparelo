@@ -8,7 +8,7 @@
 
     - **Strong**: It has to with with Efficiency: maintain the *n* constant (size of the problem) and increase the number of processors *n_p* and the **efficiency remains constant**, we are achieving **strong scalability** (the best case). What happens usually is that the more processors, the more communication and thus the **efficiency goes down**, and thus the system is **not scalable**.
 
-    ![img](res/.png)
+    ![img](res/2.png)
 
     - **Weak**: In this case, if the strong scalability usually lowers when *n_p* increases and *n* stays constant we can still achieve this oether type of scalability. And thus, this scalability is a discovery: if you increase the *n* proportionally to the increment in *n_p* processors, and in this way the **efficiency stays constant**, we have a **weakly scalable system**.
 
