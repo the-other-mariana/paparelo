@@ -28,7 +28,7 @@
 
     ![img](res/6.png)
 
-    If we duplicate *n* according to this, the sum (n size) will the a number internal of sums that is complete: to solve a sum, we need to sum pairs, and thus we need **complete trees** by having *n* follow the exponential just mentioned:
+    If we duplicate *n* according to this exponential function *n = 2^kn*, the sum of a vector of n size will involve a number of internal sums that is **complete and even**: to solve this sum Task, we need to sum **pairs**, and therefore we **need complete trees**, which is achieved when *n* follow the exponential just mentioned, *n = 2^kn*: 
 
     ![img](res/7.png)
 
