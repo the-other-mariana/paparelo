@@ -14,7 +14,9 @@ Now, the **corrected formulas are**:
 
 ## Excel Example
 
-1. We start with the first 4 columns as the given info. By keeping *kn** a fixed number: 
+Consider the tables in the [excel file](../03082022/Efficiency.xlsx), where instead of a vector of 8 numbers (kn = 3), we have a vector, say, of size 1024 (kn = 10):
+
+1. We start with the first 4 columns as the given info. By keeping *kn* a fixed number: 
 
 ![img](4.png)
 
