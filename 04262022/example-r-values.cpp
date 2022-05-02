@@ -29,5 +29,10 @@ int main(){
 	x = 11;
 	cout << "v2: " << v2 << endl; // 11
 	
+	// references to an l-value
+	int &r = x;
+	cout << &r << endl; // 0x6ffdf8
+	//int &&v3 = r; error: r is like x, a name to the same mem space
+	
 	return 0;
 }
